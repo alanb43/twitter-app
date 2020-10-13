@@ -27,6 +27,8 @@ class HomeTableTableViewController: UITableViewController {
         TwitterAPICaller.client?.logout()
         // How to make the view go back to the login page instead of staying on the table view after logging out of the API
         self.dismiss(animated: true, completion: nil)
+        // Makes it so that the user does not get pushed to the home screen the next time they open the app after they log out
+        UserDefaults.standard.set(false, forKey: "userLoggedIn")
     }
     
 
